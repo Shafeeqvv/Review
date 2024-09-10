@@ -1,296 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Review</title>
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <title>Restaurant Review</title>
   <style>
-
-    .wrapper {
-      display: flex;
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      height: 100vh; /* Full viewport height */
-    }
-
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .card {
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .logo h1 {
-      font-size: 1.5em;
-      color: #333;
-    }
-
-    .logo span {
-      font-size: 0.8em;
-      color: #777;
-    }
-
-    .rating {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .rating .star {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      font-size: 2em;
-      color: #ccc;
-      cursor: pointer;
-    }
-
-    .rating .star.active {
-      color: #9509B2; /* Highlight color */
-    }
-
-    .review {
-      margin-bottom: 20px;
-    }
-
-    .review label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .review textarea {
+    .background-div {
       width: 100%;
-      height: 100px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      resize: none;
-      display: none; /* Initially hidden */
+      height: 150px;
+      background-image: url('assets/images/banner.jpg');
+      background-size: cover; /* Adjusts image to cover the div */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat; /* Prevents image from repeating */
     }
-
-    .options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .option {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      background-color: #eee;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .option input[type="checkbox"] {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    .option input[type="checkbox"]:checked + label {
-      background-color: #9509B2;
-      color: #fff;
-    }
-
-    .option input[type="checkbox"]:checked + label i {
-      color: #fff;
-    }
-
-    .option label {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: #eee;
-      color: #333;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .option label:hover {
-      background-color: #ddd;
-    }
-
-    .option label i {
-      font-size: 1.5em;
-      color: #333;
-      margin-right: 10px;
-    }
-
-    .option label span {
-      display: block;
-    }
-
-    .social {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .social i {
-      font-size: 2em;
-      color: #333;
-      margin: 0 10px;
-      cursor: pointer;
-    }
-
-    .social i:hover {
-      color: #777;
-    }
-
-    .submit {
-      text-align: center;
-    }
-
-    .submit button {
-      padding: 10px 20px;
-      background-color: #9509B2;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .submit button:hover {
-      background-color: #8508a0;
-    }
-  </style>
+</style>
 </head>
 <body>
- 
- <div class="wrapper">
-   <div class="container">
-   <div class="card">
-     <div class="logo">
-       <h1>Restaurant Review</h1>
-     </div>
+<header class="background-div"></header>
+<main class="wrapper flex-grow-0 flex-col">
+  <form class="p-4">
+    <div class="panel flex-grow-0 flex flex-col">
+      <!-- Star rating -->
+      <div class="rating pt-4 pb-2">
+        <P class="text-center">Please rate our service</P>
+        <span class="star" data-rating="1"><i class="fas fa-star"></i></span>
+        <span class="star" data-rating="2"><i class="fas fa-star"></i></span>
+        <span class="star" data-rating="3"><i class="fas fa-star"></i></span>
+        <span class="star" data-rating="4"><i class="fas fa-star"></i></span>
+        <span class="star" data-rating="5"><i class="fas fa-star"></i></span>
+      </div>
 
-     <form>
-       <div class="rating">
-         <span class="star" data-rating="1"><i class="fas fa-star"></i></span>
-         <span class="star" data-rating="2"><i class="fas fa-star"></i></span>
-         <span class="star" data-rating="3"><i class="fas fa-star"></i></span>
-         <span class="star" data-rating="4"><i class="fas fa-star"></i></span>
-         <span class="star" data-rating="5"><i class="fas fa-star"></i></span>
-       </div>
+      <!-- Review box -->
+      <div class="review">
+        <label for="review">Tell us more about your experience:</label>
+        <textarea id="review" placeholder="Your feedback here..."></textarea>
+      </div>
 
-       <div class="review">
-         <label for="review">Tell us more about your experience:</label>
-         <textarea id="review" placeholder="Your feedback here..."></textarea>
-       </div>
+      <!-- Checkbox options -->
+      <div class="options pt-3 pb-4">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-sm-6 mb-2">
+            <div class="option">
+              <input type="checkbox" id="atmosphere" class="checkbox">
+              <label for="atmosphere">
+                <i class="fas fa-smile"></i>
+                <span>Nice atmosphere</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-2">
+            <div class="option">
+              <input type="checkbox" id="food" class="checkbox">
+              <label for="food">
+                <i class="fas fa-utensils"></i>
+                <span>Excellent food</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-2">
+            <div class="option">
+              <input type="checkbox" id="service" class="checkbox">
+              <label for="service">
+                <i class="fas fa-concierge-bell"></i>
+                <span>Perfect service</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
 
-       <div class="options">
-         <div class="row justify-content-center">
-           <div class="col-lg-4 col-sm-6 mb-2">
-             <div class="option">
-               <input type="checkbox" id="atmosphere" class="checkbox">
-               <label for="atmosphere">
-                 <i class="fas fa-smile"></i>
-                 <span>Nice atmosphere</span>
-               </label>
-             </div>
-           </div>
-           <div class="col-lg-4 col-sm-6 mb-2">
-             <div class="option">
-               <input type="checkbox" id="food" class="checkbox">
-               <label for="food">
-                 <i class="fas fa-utensils"></i>
-                 <span>Excellent food</span>
-               </label>
-             </div>
-           </div>
-           <div class="col-lg-4 col-sm-6 mb-2">
-             <div class="option">
-               <input type="checkbox" id="service" class="checkbox">
-               <label for="service">
-                 <i class="fas fa-concierge-bell"></i>
-                 <span>Perfect service</span>
-               </label>
-             </div>
-           </div>
-         </div>
-       </div>
+      <!-- Social icons -->
+      <div class="social pb-4 text-center">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+      </div>
 
-       <div class="social">
-         <i class="fab fa-instagram"></i>
-         <i class="fab fa-facebook-f"></i>
-         <i class="fab fa-twitter"></i>
-       </div>
+      <!-- Submit button -->
+      <div class="submit">
+        <button type="submit" class="btn btn-primary">Leave feedback</button>
+      </div>
+    </div>
+  </form>
+</main>
 
-       <div class="submit">
-         <button type="submit">Leave feedback</button>
-       </div>
-     </form>
-   </div>
- </div>
- </div>
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <!-- jQuery and Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const stars = document.querySelectorAll('.star');
+  const review = document.getElementById('review');
+  const options = document.querySelectorAll('.option');
 
-  <script>
-    const stars = document.querySelectorAll('.star');
-    const review = document.getElementById('review');
-    const options = document.querySelectorAll('.option');
+  // Set the first star as active on page load
+  if (stars.length > 0) {
+    stars[0].classList.add('active');
+  }
 
-    stars.forEach(star => {
-      star.addEventListener('click', () => {
-        const rating = star.dataset.rating;
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const rating = star.dataset.rating;
 
-        // Highlight stars up to the clicked star
-        stars.forEach((s, index) => {
-          if (index < rating) {
-            s.classList.add('active');
-          } else {
-            s.classList.remove('active');
-          }
-        });
-
-        // Show textarea when a star is clicked
-        review.style.display = 'block';
-      });
-    });
-
-    options.forEach(option => {
-      option.addEventListener('click', () => {
-        option.classList.toggle('active');
-
-        // Update the review textarea with the selected option
-        if (option.classList.contains('active')) {
-          review.value += `${option.querySelector('span').textContent}\n`;
+      stars.forEach((s, index) => {
+        if (index < rating) {
+          s.classList.add('active');
         } else {
-          // Remove the option from the textarea if it's deactivated
-          review.value = review.value.replace(`${option.querySelector('span').textContent}\n`, '');
+          s.classList.remove('active');
         }
       });
+
+      review.style.display = 'block';
     });
-  </script>
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      option.classList.toggle('active');
+
+      if (option.classList.contains('active')) {
+        review.value += `${option.querySelector('span').textContent}\n`;
+      } else {
+        review.value = review.value.replace(`${option.querySelector('span').textContent}\n`, '');
+      }
+    });
+  });
+});
+
+</script>
 </body>
 </html>
